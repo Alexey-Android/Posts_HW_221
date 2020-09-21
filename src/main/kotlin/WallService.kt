@@ -18,6 +18,7 @@ class WallService {
                     date = searchPost.date
                 )
                 posts[i] = updatedPost
+                println(posts.last())
                 return true
             }
         }

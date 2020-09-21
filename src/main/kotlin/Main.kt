@@ -1,41 +1,36 @@
 fun main() {
 
-
-        val comments = Comment(
-            count = 1,
-            canPost = false,
-            groupsCanPost = false,
-            canClose = false,
-            canOpen = false,
-        )
-        val likes = Like(
-            count = 0,
-            userLikes = false,
-            canLike = false,
-            canPublish = false,
-        )
-        val reposts = Repost(
-            count = 0,
-            userReposted = false,
-        )
-        val views = View(
-            count = 0
-        )
         val original = Post(
-            id = 1222,
+            id = 1,
             ownerId = 1,
             fromId = 200,
             createdBy = 3,
             date = 4,
-            text = "",
+            text = "originalPost",
             replyOwnerId = 5,
             replyPostId = 6,
             friendsOnly = false,
-            comments = comments,
+            comments = Comment(
+                count = 1,
+                canPost = false,
+                groupsCanPost = false,
+                canClose = false,
+                canOpen = false,
+            ),
             copyright = "",
-            likes = likes,
-            reposts = reposts,
-            views = views,
+            likes = Like(
+                count = 0,
+                userLikes = false,
+                canLike = false,
+                canPublish = false,
+            ),
+            reposts = Repost(
+                count = 0,
+                userReposted = false,
+            ),
+            views = View(
+                count = 0
+            ),
             postType = "",
             SignerIg = 7,
             canPin = false,
@@ -47,9 +42,51 @@ fun main() {
             postPonedId = 8
         )
 
+    val updatePost = Post(
+        id = 1,
+        ownerId = 11,
+        fromId = 21,
+        createdBy = 31,
+        date = 41,
+        text = "UpdatePost",
+        replyOwnerId = 51,
+        replyPostId = 61,
+        friendsOnly = false,
+        comments = Comment(
+            count = 71,
+            canPost = false,
+            groupsCanPost = false,
+            canClose = false,
+            canOpen = false,
+        ),
+        copyright = "",
+        likes = Like(
+            count = 81,
+            userLikes = false,
+            canLike = false,
+            canPublish = false,
+        ),
+        reposts = Repost(
+            count = 91,
+            userReposted = false,
+        ),
+        views = View(
+            count = 101
+        ),
+        postType = "",
+        SignerIg = 102,
+        canPin = false,
+        canDelete = false,
+        canEdit = false,
+        isPinned = false,
+        markedAsAds = false,
+        isFavorite = false,
+        postPonedId = 103
+    )
+
     val service = WallService()
     service.add(original)
-    service.update(original)
+    service.update(updatePost)
 
     }
 
