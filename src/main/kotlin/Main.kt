@@ -24,7 +24,7 @@ fun main() {
         val original = Post(
             id = 1222,
             ownerId = 1,
-            fromId = 2,
+            fromId = 200,
             createdBy = 3,
             date = 4,
             text = "",
@@ -49,9 +49,8 @@ fun main() {
 
     val service = WallService()
     service.add(original)
+    service.update(original)
 
     }
 
-    fun update(post: Post): Boolean {
-        TODO()
-    }
+
